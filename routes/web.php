@@ -3,7 +3,7 @@
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
-
+use App\Models\Post;
 // use as class
 
 //use as public
@@ -32,6 +32,9 @@ $jobs = [
 ];
 
 Route::get('/', function () {
+    // $jobs = Job::all();
+    // dd($jobs[0]->title);
+
     return view('welcome', [
 
     ]);
@@ -48,12 +51,6 @@ Route::get('/jobs', function () {
 
 Route::get('/jobs/{id}', function ($id) {
     $job = Job::find($id);
-    // $job = Arr::first(Job::all(), function ($value, $key) use ($id) {
-    //     return $value['id'] == $id;
-    // });
-    // $job = Arr::first($jobs, fn($job) => $job['id'] == $id);
-    // dump($job);
-    // dd($id);
     return view('job', [
         'job' => $job
     ]);
@@ -84,4 +81,19 @@ Route::get('/jobs/{id}', function ($id) {
 
 Route::get('contact', function () {
     return view('contact');
+});
+
+Route::get('/posts', function () {
+    return view('posts', [
+        'posts' => Post::all()
+    ]);
+    // return 'About';
+    // return ['status' => true, 'message' => 'Yes'];
+});
+
+Route::get('/post/{id}', function ($id) {
+    $post = Post::find($id);
+    return view('post', [
+        'post' => $post
+    ]);
 });

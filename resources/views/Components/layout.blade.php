@@ -35,6 +35,8 @@
                                 <x-nav-link href="/jobs" :active="request()->is('jobs*')" version="d">Jobs</x-nav-link>
                                 <x-nav-link href="/contact" :active="request()->is('contact')"
                                     version="d">Contact</x-nav-link>
+                                <x-nav-link href="/posts" :active="request()->is('posts')"
+                                    version="d">Posts</x-nav-link>
                             </div>
                         </div>
                     </div>
@@ -108,6 +110,7 @@
                     <x-nav-link href="/" :active="request()->is('/')" id="mobile-home" version="m">Home</x-nav-link>
                     <x-nav-link href="/jobs" :active="request()->is('jobs')" version="m">About</x-nav-link>
                     <x-nav-link href="/contact" :active="request()->is('contact')" version="m">Contact</x-nav-link>
+                    <x-nav-link href="/posts" :active="request()->is('posts')" version="m">Posts</x-nav-link>
 
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <!-- <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
